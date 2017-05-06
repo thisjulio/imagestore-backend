@@ -6,4 +6,8 @@ config.server = {
 	appUrl: "http://localhost:3001/"
 };
 
+config.jwt = {
+	secret: "secret"
+};
+
 module.exports = config;
