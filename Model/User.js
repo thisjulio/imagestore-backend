@@ -1,17 +1,28 @@
 const Promise = require('promise');
 
+const mockUser = {
+	id: "mockUser",
+	email: "mock@user.com",
+	name: "Usuário Mockado",
+	password:"$2a$10$CjzylXoZ3cufL8T/NDUZ8.fNWU/mIF0NuR/zcSwSlTP5J4KKPtChO" // 123456
+};
+
+const database = [mockUser];
+
 exports.all = () => new Promise((resolve,reject)=>{
-	reject(Error("Banco de dados ainda não implementado"));
+	resolve(database);
 });
 
 exports.findById = (id) => new Promise((resolve,reject)=>{
-	reject(Error("Banco de dados ainda não implementado"));
+	if(id==mockUser.id) resolve(mockUser);
+	else reject(Error("Usuário não encontrado!"));
 });
 
 exports.findByEmail = (email) => new Promise((resolve,reject)=>{
-	reject(Error("Banco de dados ainda não implementado"));
+	if(email==mockUser.email) resolve(mockUser);
+	else reject(Error("Usuário não encontrado!"));
 });
 
-exports.create = (email,name,password) => new Promise((resolve,reject)=>{
+exports.create = (name,email,password) => new Promise((resolve,reject)=>{
 	reject(Error("Banco de dados ainda não implementado"));
 });
