@@ -7,7 +7,8 @@ config.server = {
 };
 
 config.jwt = {
-	secret: "secret"
+	secret: "secret",
+	expires: '7'
 };
 
 module.exports = config;
