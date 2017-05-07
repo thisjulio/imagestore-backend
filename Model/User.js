@@ -9,17 +9,19 @@ const mockUser = {
 
 const database = [mockUser];
 
+const copyOf = (obj) => (JSON.parse(JSON.stringify(obj)));
+
 exports.all = () => new Promise((resolve,reject)=>{
 	resolve(database);
 });
 
 exports.findById = (id) => new Promise((resolve,reject)=>{
-	if(id==mockUser.id) resolve(mockUser);
+	if(id==mockUser.id) resolve(copyOf(mockUser));
 	else reject(Error("Usuário não encontrado!"));
 });
 
 exports.findByEmail = (email) => new Promise((resolve,reject)=>{
-	if(email==mockUser.email) resolve(mockUser);
+	if(email==mockUser.email) resolve(copyOf(mockUser));
 	else reject(Error("Usuário não encontrado!"));
 });
 
