@@ -11,4 +11,8 @@ config.jwt = {
 	expires: '7'
 };
 
+config.imgur = {
+	clientId: "6d36a9c00d94e1d"
+};
+
 module.exports = config;
