@@ -60,7 +60,7 @@ exports.login = (email,password) => {
 				});
 			}
 		)
-	);
+	).catch((err)=>Promise.reject(Error("Usuário ou senha incorreta.")));
 };
 
 exports.tokenAccess = (token) => {
